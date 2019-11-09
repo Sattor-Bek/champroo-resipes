@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe.update(recipe_params)
+    redirect_to recipe_path(@recipe)
   end
 
   def destroy

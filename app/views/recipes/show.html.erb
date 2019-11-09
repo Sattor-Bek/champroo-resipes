@@ -1,2 +1,35 @@
+<%= cl_image_tag @recipe.photo  unless @recipe.photo.blank? %>
 <h1 class="recipe_name"> <%= @recipe.name %> </h1>
-<h1 class="description"> <%= @ingredient%>
+
+<table class="table table-bordered">
+  <tbody>
+    <thead>
+      <th>Ingredient</th>
+      <th>Description</th>
+    </thead>
+    <% @recipe.quantities.each do |quantity| %>
+      <tr>
+        <td><%= quantity.ingredient.name %></td>
+        <td><%= quantity.description %></td>
+        <td>
+          <%= link_to quantity_path(quantity), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash destroy_quantity"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    <%= simple_form_for @recipe do |f| %>
+    <div class="form-group">
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit%>
+      <% end %>
+    </div>
+  </tbody>
+</table>
+    <div class="col-sm-12 col-md-6">
+    <%= link_to "add ingredients", new_recipe_quantity_path(@recipe), recipe: @recipe, quantity: @quantity %>
+    </div>
+  </div>
+  <h2><%= link_to 'Confirm and go back', recipes_path%></h2><br><br>
+  <h2><%= link_to recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } do %>Delete this item <% end %></h2>

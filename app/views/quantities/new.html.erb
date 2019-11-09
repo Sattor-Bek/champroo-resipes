@@ -1,2 +1,8 @@
 <h1>Quantities#new</h1>
-<p>Find me in app/views/quantities/new.html.erb</p>
+<h3>Add a new description</h3>
+<%= simple_form_for [@recipe, @quantity] do |f| %>
+  <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+<%= link_to 'Go back to homepage', recipes_path, class: 'btn btn-warning' %>
