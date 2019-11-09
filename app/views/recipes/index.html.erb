@@ -1,0 +1,12 @@
+<p>Wellcome to the Champroo Recipe Book</p>
+
+<div class="cards">
+<% @recipes.each do |r| %>
+  <%= cl_image_tag r.photo  unless r.photo.blank? %>
+  <%= r.name %>
+  <%= link_to "check this recipe", recipe_path(r)%>
+<% end %>
+</div>
+<div class="navbar">
+<%= link_to 'Add recipe', new_recipe_path %>
+</div>

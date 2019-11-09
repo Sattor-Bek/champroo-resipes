@@ -1,0 +1,8 @@
+<%= simple_form_for @recipe do |f| %>
+<div class="form-group">
+  <%= f.input :name %>
+  <%= f.submit%>
+<% end %>
+</div>
+
+<%= link_to 'Cancel', recipes_path %>

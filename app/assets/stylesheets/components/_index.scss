@@ -2,3 +2,20 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+
+.banner {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  p {
+    position: absolute;
+    width: 1369px;
+    height: 194px;
+    left: 39px;
+    top: 86px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+}
+
