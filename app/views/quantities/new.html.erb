@@ -1,5 +1,5 @@
 <h1>Quantities#new</h1>
-<h3>Add a new description</h3>
+<h3>Add a new description for <%=@recipe.name%></h3>
 <%= simple_form_for [@recipe, @quantity] do |f| %>
   <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
   <%= f.input :description %>

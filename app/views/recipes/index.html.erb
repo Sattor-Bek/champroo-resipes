@@ -1,12 +1,39 @@
+<div class="banner">
+<%= cl_image_tag("https://res.cloudinary.com/do6bcfrqi/image/upload/v1573370874/recipes/banner2_mvgivh.jpg") %>
 <p>Wellcome to the Champroo Recipe Book</p>
+</div>
 
 <div class="cards">
 <% @recipes.each do |r| %>
-  <%= cl_image_tag r.photo  unless r.photo.blank? %>
-  <%= r.name %>
-  <%= link_to "check this recipe", recipe_path(r)%>
+  <div class="card-item"><%= cl_image_tag r.photo  unless r.photo.blank? %>
+    <div class="card-description">
+      <h2><%= r.name %></h2>
+      <p><%= link_to "check this recipe", recipe_path(r)%> </p>
+    </div>
+  </div>
 <% end %>
 </div>
+
 <div class="navbar">
-<%= link_to 'Add recipe', new_recipe_path %>
+  <div id="add-recipe">
+    <p><%= link_to 'Add a recipe', new_recipe_path %><p>
+  </div>
+  <div id ="social">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fab fa-twitter"></i></a>
+      </li>
+    </ul>
+  </div>
 </div>

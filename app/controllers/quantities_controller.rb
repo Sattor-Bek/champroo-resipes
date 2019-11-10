@@ -19,7 +19,7 @@ class QuantitiesController < ApplicationController
 
   def destroy
     @quantity.destroy
-    redirect_to recipes_path(@quantity.recipe)
+    redirect_to recipe_path(@quantity.recipe)
   end
 
   private
@@ -33,6 +33,6 @@ class QuantitiesController < ApplicationController
   end
 
   def set_quantity
-    @quantity = quantity.find(params[:id])
+    @quantity = Quantity.find(params[:id])
   end
 end
