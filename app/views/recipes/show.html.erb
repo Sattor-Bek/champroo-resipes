@@ -33,9 +33,9 @@
     <div class="navbar-s">
       <div id="edit-commands">
         <div class="button">
-        <p class="button-p"><%= link_to "add ingredients", new_recipe_quantity_path(@recipe), recipe: @recipe, quantity: @quantity %></p></div>
+        <p class="button-p"><%= link_to "Ddd ingredients", new_recipe_quantity_path(@recipe), recipe: @recipe, quantity: @quantity %></p></div>
         <div class="button">
-        <p class="button-p"><%= link_to 'Confirm and go back', recipes_path%></p></div>
+        <p class="button-p"><%= link_to 'Confirm', recipes_path%></p></div>
         <div class="button">
         <p class="button-p"><%= link_to recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } do %>Delete this item <% end %></p>
       </div>
